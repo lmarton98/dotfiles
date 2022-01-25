@@ -1,0 +1,17 @@
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls -phal --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+
+alias cp='cp -r'
+alias rm='rm -r --preserve-root'
+alias mkdir='mkdir -p'
+
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
