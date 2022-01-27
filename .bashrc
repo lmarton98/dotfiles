@@ -12,6 +12,9 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extras}; do
 done
 unset file
 
+# Ignore untracked files in dotfiles repo
+dotfiles config --local status.showUntrackedFiles no
+
 # History
 shopt -s histappend
 HISTCONTROL=ignoreboth
