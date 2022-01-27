@@ -15,6 +15,9 @@ unset file
 # Ignore untracked files in dotfiles repo
 dotfiles config --local status.showUntrackedFiles no
 
+# Configure user email for dotfiles repo
+dotfiles config --local user.email lmarton98@gmail.com
+
 # History
 shopt -s histappend
 HISTCONTROL=ignoreboth
