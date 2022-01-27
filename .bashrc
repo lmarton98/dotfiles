@@ -42,7 +42,10 @@ shopt -s cdspell
 shopt -s direxpand dirspell
 
 # Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob;
+shopt -s nocaseglob
+
+# Allow dotfiles to be included in filename expansion
+shopt -s dotglob
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
