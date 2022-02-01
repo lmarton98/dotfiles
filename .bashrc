@@ -12,17 +12,8 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extras}; do
 done
 unset file
 
-# Ignore untracked files in dotfiles repo
-dotfiles config --local status.showUntrackedFiles no
-
-# Configure user email for dotfiles repo
-dotfiles config --local user.email lmarton98@gmail.com
-
 # History
 shopt -s histappend
-HISTCONTROL=ignoreboth
-HISTSIZE=5000
-HISTFILESIZE=$HISTSIZE
 
 # Set Bash to save each command to history, right after it has been executed.
 PROMPT_COMMAND='history -a'

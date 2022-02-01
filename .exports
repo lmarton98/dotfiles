@@ -1,0 +1,6 @@
+export SCREENDIR="${HOME}/.screen";
+export EDITOR='vim';
+
+export HISTCONTROL='ignoreboth';
+export HISTSIZE='5000';
+export HISTFILESIZE="$HISTSIZE";
