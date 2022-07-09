@@ -16,7 +16,10 @@ unset file
 shopt -s histappend
 
 # Set Bash to save each command to history, right after it has been executed.
-PROMPT_COMMAND='history -a'
+prompt() {
+  history -a
+}
+PROMPT_COMMAND=prompt
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -32,7 +35,7 @@ shopt -s cmdhist
 # Automatically fix directory name typos when changing directory.
 shopt -s cdspell
 
-# Automatically expand directory globs and fix directory name typos whilst completing. 
+# Automatically expand directory globs and fix directory name typos whilst completing.
 shopt -s direxpand dirspell
 
 # Case-insensitive globbing (used in pathname expansion)
