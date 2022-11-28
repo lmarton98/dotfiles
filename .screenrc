@@ -1,0 +1,33 @@
+defscrollback 5000
+altscreen on
+mousetrack on
+term screen-256color
+vbell off
+
+
+# Ctrl+arrows for region focus switching
+bindkey "^[[1;5D" focus left
+bindkey "^[[1;5C" focus right
+bindkey "^[[1;5A" focus up
+bindkey "^[[1;5B" focus down
+
+# Ctrl+Shift+arrows for window switching
+bindkey "^[[1;6D" prev
+bindkey "^[[1;6C" next
+
+# F2 puts Screen into resize mode
+bindkey "^[OQ" eval "command -c rsz" # enter resize mode
+
+# use arrow keys to resize regions
+bind -c rsz -k kl eval "resize -h -5" "command -c rsz"
+bind -c rsz -k kd eval "resize -v -5" "command -c rsz"
+bind -c rsz -k ku eval "resize -v +5" "command -c rsz"
+bind -c rsz -k kr eval "resize -h +5" "command -c rsz"
+
+# quickly switch between regions using tab
+bind -c rsz \t    eval "focus"       "command -c rsz" # Tab
+
+startup_message off
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+caption string '%?%F%{.R.}%?%3n %t%?'
